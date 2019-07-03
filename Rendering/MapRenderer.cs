@@ -19,6 +19,7 @@ namespace EVESovMap.Rendering
             var regionNamesRenderTask = new RegionNamesMapRenderTask();
             var solarSystemsMapRenderTask = new SolarSystemsMapRenderTask();
             var solarSystemJumpsMapRenderTask = new SolarSystemJumpsMapRenderTask();
+            var voronoiSovMapRenderTask = new VoronoiSovMapRenderTask();
 
             var imageInfo = new SKImageInfo(MapConstants.HORIZONTAL_SIZE, MapConstants.VERTICAL_SIZE, SKImageInfo.PlatformColorType, SKAlphaType.Premul);
 
@@ -32,9 +33,11 @@ namespace EVESovMap.Rendering
                     // paint.Color = new SKColor(0xB0, 0xB0, 0xFF);
                     // paint.IsAntialias = true;
 
+                    voronoiSovMapRenderTask.Render(myCanvas, _dataContext);
                     solarSystemJumpsMapRenderTask.Render(myCanvas, _dataContext);
                     solarSystemsMapRenderTask.Render(myCanvas, _dataContext);
                     regionNamesRenderTask.Render(myCanvas, _dataContext);
+                    
                     
 
                     using (SKImage image = surface.Snapshot())

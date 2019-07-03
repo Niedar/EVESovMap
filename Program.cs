@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using CsvHelper;
-using SkiaSharp;
-using EVESovMap.Rendering;
+﻿using EVESovMap.Rendering;
 
 namespace EVESovMap
 {
@@ -12,6 +6,9 @@ namespace EVESovMap
     {
         static void Main(string[] args)
         {
+
+            // TODO: https://github.com/viceroypenguin/RBush
+            // TODO: https://blog.mapbox.com/a-dive-into-spatial-search-algorithms-ebd0c5e39d2a
             var dataLoader = new MapDataLoader();
             var mapDataContext = dataLoader.LoadData();
             var mapRenderer = new MapRenderer(mapDataContext);

@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using RBush;
 
 namespace EVESovMap
 {
@@ -13,18 +14,20 @@ namespace EVESovMap
     
     public class SolarSystem
     {
-        public string solarSystemID {get; set;}
+        public int solarSystemID {get; set;}
         public double x {get; set;}
         public double y {get; set;}
         public double z {get; set;}
+
+        public int? allianceID {get; set;}
     }
 
     public class SolarSystemJumps
     {
         public string fromRegionID {get; set;}
         public string fromConstellationID {get; set;}
-        public string fromSolarSystemID {get; set;}
-        public string toSolarSystemID {get; set;}
+        public int fromSolarSystemID {get; set;}
+        public int toSolarSystemID {get; set;}
         public string toConstellationID {get; set;}
         public string toRegionID {get; set;}
 
